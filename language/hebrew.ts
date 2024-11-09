@@ -1,4 +1,4 @@
-const misparHechrachi: { [key: string]: number } = {
+export const misparHechrachi: { [key: string]: number } = {
   א: 1,
   ב: 2,
   ג: 3,
@@ -28,12 +28,12 @@ const misparHechrachi: { [key: string]: number } = {
   ץ: 18,
 }
 
-const size: Array<number> = [
+export const size: Array<number> = [
   1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100,
   200, 300, 400,
 ]
 
-const misparGadol: { [key: string]: number } = {
+export const misparGadol: { [key: string]: number } = {
   א: 1,
   ב: 2,
   ג: 3,
@@ -63,7 +63,7 @@ const misparGadol: { [key: string]: number } = {
   ץ: 900,
 }
 
-const misparSiduri: { [key: string]: number } = {
+export const misparSiduri: { [key: string]: number } = {
   א: 1,
   ב: 2,
   ג: 3,
@@ -93,7 +93,7 @@ const misparSiduri: { [key: string]: number } = {
   ץ: 18,
 }
 
-const misparKatan: { [key: string]: number } = {
+export const misparKatan: { [key: string]: number } = {
   א: 1,
   ב: 2,
   ג: 3,
@@ -123,25 +123,21 @@ const misparKatan: { [key: string]: number } = {
   ץ: 9,
 }
 
-const mapMisparHechrachi = (array: Array<string>): Array<number> =>
+export const mapMisparHechrachi = (
+  array: Array<string>,
+): Array<number> =>
   array
     .map(x => size[(misparHechrachi[x] as number) - 1])
     .filter(x => x) as Array<number>
-const map9 = (array: Array<string>): Array<number> =>
+export const mapMisparHechrachi9 = (
+  array: Array<string>,
+): Array<number> =>
   array
     .map(x => size[((misparHechrachi[x] as number) - 1) % 9])
     .filter(x => x) as Array<number>
-const mapMisparGadol = (array: Array<string>): Array<number> =>
+export const mapMisparGadol = (array: Array<string>): Array<number> =>
   array.map(x => misparGadol[x]).filter(x => x) as Array<number>
-const mapMisparSiduri = (array: Array<string>): Array<number> =>
+export const mapMisparSiduri = (array: Array<string>): Array<number> =>
   array.map(x => misparSiduri[x]).filter(x => x) as Array<number>
-const mapMisparKatan = (array: Array<string>): Array<number> =>
+export const mapMisparKatan = (array: Array<string>): Array<number> =>
   array.map(x => misparKatan[x]).filter(x => x) as Array<number>
-
-export {
-  mapMisparHechrachi,
-  mapMisparGadol,
-  mapMisparSiduri,
-  mapMisparKatan,
-  map9,
-}

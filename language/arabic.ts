@@ -1,4 +1,4 @@
-const ABJAD_MAP = {
+export const ILM_AL_HURUF_MAP = {
   ا: 1,
   آ: 1,
   أ: 1,
@@ -50,9 +50,7 @@ const size = [
   200, 300, 400, 500, 600, 700, 800, 900, 1000,
 ]
 
-const mapAbjad = array =>
-  array.map(x => size[ABJAD_MAP[x] - 1]).filter(x => x)
-const map9 = array =>
-  array.map(x => size[(ABJAD_MAP[x] - 1) % 9]).filter(x => x)
-
-export { ABJAD_MAP, mapAbjad, map9 }
+export const mapIlmAlHuruf = array =>
+  array.map(x => size[ILM_AL_HURUF_MAP[x] - 1]).filter(x => x)
+export const mapIlmAlHuruf9 = array =>
+  array.map(x => size[(ILM_AL_HURUF_MAP[x] - 1) % 9]).filter(x => x)

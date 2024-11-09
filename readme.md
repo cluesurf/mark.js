@@ -6,9 +6,9 @@ For Node.js, not the browser, as it requires a database basically to do across c
 Pass in an array of characters, which you can get with the _spread_ operator.
 
 ```js
-import chinese from '@lancejpollard/gematria.js/language/chinese'
-import greek from '@lancejpollard/gematria.js/language/greek'
-import { sum, peak, cycle } from '@lancejpollard/gematria.js'
+import chinese from '@termsurf/mark.js/language/chinese'
+import greek from '@termsurf/mark.js/language/greek'
+import { sum, peak, cycle } from '@termsurf/mark.js'
 
 console.log(sum(greek.mapAlphabet([...'χξϛ'])))
 // 666 https://en.wikipedia.org/wiki/Number_of_the_beast
