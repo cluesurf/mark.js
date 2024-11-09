@@ -1,5 +1,5 @@
 {
-  "name": "@termsurf/mark.js",
+  "name": "@termsurf/mark",
   "version": "0.4.0",
   "scripts": {
     "make": "tsc && tsc-alias",
