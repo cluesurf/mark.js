@@ -1,4 +1,6 @@
-const originalConsonant25: { [key: string]: number } = {
+export const virama = '\u094D'
+
+export const originalConsonant25: { [key: string]: number } = {
   क: 1,
   ख: 2,
   ग: 3,
@@ -26,24 +28,24 @@ const originalConsonant25: { [key: string]: number } = {
   म: 25,
 }
 
-const the4Semivowels: { [key: string]: number } = {
+export const the4Semivowels: { [key: string]: number } = {
   य: 26,
   र: 27,
   ल: 28,
   व: 29,
 }
 
-const the3Sibilants: { [key: string]: number } = {
+export const the3Sibilants: { [key: string]: number } = {
   श: 30,
   ष: 31,
   स: 32,
 }
 
-const theGlottal: { [key: string]: number } = {
+export const theGlottal: { [key: string]: number } = {
   ह: 33,
 }
 
-const extraConsonants: { [key: string]: number } = {
+export const extraConsonants: { [key: string]: number } = {
   क़: 1,
   ख़: 2,
   ग़: 3,
@@ -54,14 +56,14 @@ const extraConsonants: { [key: string]: number } = {
   ॠ: 27,
 }
 
-const combinationCharacters: { [key: string]: number } = {
+export const combinationCharacters: { [key: string]: number } = {
   क्ष: 31,
   त्र: 24,
   ज्ञ: 29,
   श्र: 43,
 }
 
-const CONSONANT_MAP: { [key: string]: number } = {
+export const CONSONANT_MAP: { [key: string]: number } = {
   ...originalConsonant25,
   ...the4Semivowels,
   ...the3Sibilants,
@@ -70,7 +72,7 @@ const CONSONANT_MAP: { [key: string]: number } = {
   ...combinationCharacters,
 }
 
-const VOWEL_MAP: { [key: string]: number } = {
+export const VOWEL_MAP: { [key: string]: number } = {
   अ: 1,
   आ: 2,
   'ा': 2,
@@ -94,24 +96,83 @@ const VOWEL_MAP: { [key: string]: number } = {
   'ौ': 11,
 }
 
-const ALPHABET_MAP: { [key: string]: number } = {
+export const ALPHABET_MAP: { [key: string]: number } = {
   ...CONSONANT_MAP,
   // ...VOWEL_MAP,
 }
 
-const size: Array<number> = [
+export const katapayadi = {
+  क: 1,
+  ट: 1,
+  प: 1,
+  य: 1,
+  ख: 2,
+  ठ: 2,
+  फ: 2,
+  र: 2,
+  ग: 3,
+  ड: 3,
+  ब: 3,
+  ल: 3,
+  घ: 4,
+  ढ: 4,
+  भ: 4,
+  व: 4,
+  ङ: 5,
+  ण: 5,
+  म: 5,
+  श: 5,
+  च: 6,
+  त: 6,
+  ष: 6,
+  छ: 7,
+  थ: 7,
+  स: 7,
+  ज: 8,
+  द: 8,
+  ह: 8,
+  झ: 9,
+  ध: 9,
+  ञ: 0,
+  न: 0,
+}
+
+export const mapKatapayadi = (text: string) => {
+  const list: Array<{ value: string; hasVowel: boolean }> = []
+  const chars = [...text]
+  chars.forEach(char => {
+    if (CONSONANT_MAP[char]) {
+      if (!katapayadi[char]) {
+        throw new Error(`${char} not supported`)
+      }
+      list.push({ value: char, hasVowel: true })
+    } else if (virama === char) {
+      const last = list[list.length - 1]
+      if (last) {
+        last.hasVowel = false
+      }
+    }
+  })
+  return list.map(item => {
+    if (item.hasVowel) {
+      return katapayadi[item.value]
+    } else {
+      return 0
+    }
+  })
+}
+
+export const size: Array<number> = [
   1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100,
   200, 300, 400, 500, 600, 700, 800, 900,
 ]
 
-const map27 = (array: Array<string>): Array<number> =>
+export const map27 = (array: Array<string>): Array<number> =>
   array
     .map(x => size[((ALPHABET_MAP[x] as number) - 1) % 27])
     .filter(x => x != null) as Array<number>
 
-const map9 = (array: Array<string>): Array<number> =>
+export const map9 = (array: Array<string>): Array<number> =>
   array
     .map(x => size[((ALPHABET_MAP[x] as number) - 1) % 9])
     .filter(x => x != null) as Array<number>
-
-export { ALPHABET_MAP, map27, map9 }

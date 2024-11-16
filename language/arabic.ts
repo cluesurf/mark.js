@@ -52,5 +52,3 @@ const size = [
 
 export const mapIlmAlHuruf = array =>
   array.map(x => size[ILM_AL_HURUF_MAP[x] - 1]).filter(x => x)
-export const mapIlmAlHuruf9 = array =>
-  array.map(x => size[(ILM_AL_HURUF_MAP[x] - 1) % 9]).filter(x => x)

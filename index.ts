@@ -1,7 +1,8 @@
-const sum = (array: number[]): number => array.reduce((m, x) => m + x)
+const sum = (array: Array<number>): number =>
+  array.reduce((m, x) => m + x, 0)
 
-const peak = (array: number[]): number => {
-  let input: number[] = array
+const peak = (array: Array<number>): number => {
+  let input: Array<number> = array
   while (true) {
     const s: number = sum(input)
     if (s < 10) {
@@ -13,7 +14,11 @@ const peak = (array: number[]): number => {
   }
 }
 
-const cycle = (start: number, end: number, array: number[]): number => {
+const cycle = (
+  start: number,
+  end: number,
+  array: Array<number>,
+): number => {
   const base: number = end - start + 1
   const offset: number = start - 1
   const sum: number = array.reduce((m, x) => m + x)
@@ -21,7 +26,7 @@ const cycle = (start: number, end: number, array: number[]): number => {
   return rotation + offset
 }
 
-const split = (value: number): number[] =>
+const split = (value: number): Array<number> =>
   value
     .toString()
     .split('')

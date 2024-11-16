@@ -1,4 +1,4 @@
-const ALPHABET_MAP: { [key: string]: number } = {
+export const ALPHABET_MAP: { [key: string]: number } = {
   ཀ: 1,
   ཫ: 1,
   ཁ: 2,
@@ -36,20 +36,15 @@ const ALPHABET_MAP: { [key: string]: number } = {
   ཥ: 27,
   ས: 28,
   ཧ: 29,
+  ཨ: 30,
 }
 
 const size: Array<number> = [
   1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100,
-  200, 300, 400, 500, 600, 700, 800, 900,
+  200, 300, 400, 500, 600, 700, 800, 900, 1000,
 ]
 
-const map27 = (array: Array<string>): Array<number> =>
+export const mapLetters = (array: Array<string>): Array<number> =>
   array
-    .map(x => size[((ALPHABET_MAP[x] as number) - 1) % 27])
+    .map(x => size[(ALPHABET_MAP[x] as number) - 1])
     .filter(x => x) as Array<number>
-const map9 = (array: Array<string>): Array<number> =>
-  array
-    .map(x => size[((ALPHABET_MAP[x] as number) - 1) % 9])
-    .filter(x => x) as Array<number>
-
-export { ALPHABET_MAP, map27, map9 }

@@ -129,12 +129,6 @@ export const mapMisparHechrachi = (
   array
     .map(x => size[(misparHechrachi[x] as number) - 1])
     .filter(x => x) as Array<number>
-export const mapMisparHechrachi9 = (
-  array: Array<string>,
-): Array<number> =>
-  array
-    .map(x => size[((misparHechrachi[x] as number) - 1) % 9])
-    .filter(x => x) as Array<number>
 export const mapMisparGadol = (array: Array<string>): Array<number> =>
   array.map(x => misparGadol[x]).filter(x => x) as Array<number>
 export const mapMisparSiduri = (array: Array<string>): Array<number> =>
