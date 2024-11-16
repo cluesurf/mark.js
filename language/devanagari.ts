@@ -1,3 +1,5 @@
+import { Span } from '~/language/types.js'
+
 export const virama = '\u094D'
 
 export const originalConsonant25: { [key: string]: number } = {

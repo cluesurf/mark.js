@@ -44,6 +44,11 @@ const size: Array<number> = [
   200, 300, 400, 500, 600, 700, 800, 900, 1000,
 ]
 
+export const sizeMass = (list: Array<string>) => {}
+export const sizeLink = (list: Array<string>) => {}
+export const siteMass = (list: Array<string>) => {}
+export const siteLink = (list: Array<string>) => {}
+
 export const mapLetters = (array: Array<string>): Array<number> =>
   array
     .map(x => size[(ALPHABET_MAP[x] as number) - 1])

@@ -84,6 +84,7 @@ const allConsonants = {
   ...consonantDiacritics,
 }
 
+// https://sanskrit.iitk.ac.in/jnanasangraha/sankhya/katapayaadi/encode/sa/
 export const katapayadi = {
   క: 1,
   ట: 1,
