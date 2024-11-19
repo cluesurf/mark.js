@@ -19,6 +19,7 @@ import * as talk from './language/talk'
 
 logLatinAlphabet('dog')
 logLatinAlphabet('gold')
+logLatinAlphabet('pattern')
 logLatinAlphabet('sophistication')
 // logTalk('UwekInd')
 // logTalk('vIdiyo')
@@ -35,9 +36,9 @@ function logTalk(text: string) {
 function logLatinAlphabet(text: string) {
   console.log(text)
   console.log('  site:', mass(latin.listAlphabetSite(text)))
-  console.log('    fold:', fold(mass(latin.listAlphabetSite(text))))
+  console.log('    base:', fold(mass(latin.listAlphabetSite(text))))
   console.log('  size:', mass(latin.listAlphabetSize(text)))
-  console.log('    fold:', fold(mass(latin.listAlphabetSize(text))))
-  console.log('  base:', mass(latin.listAlphabetBase(text)))
-  console.log('    fold:', fold(mass(latin.listAlphabetBase(text))))
+  console.log('    base:', fold(mass(latin.listAlphabetSize(text))))
+  console.log('  fold:', mass(latin.listAlphabetFold(text)))
+  console.log('    base:', fold(mass(latin.listAlphabetFold(text))))
 }

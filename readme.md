@@ -28,25 +28,25 @@ Logs from some of the tests:
 ```
 dog
   site: 26
-    fold: 8
+    base: 8
   size: 71
-    fold: 8
-  base: 17
-    fold: 8
+    base: 8
+  fold: 17
+    base: 8
 gold
   site: 38
-    fold: 2
+    base: 2
   size: 101
-    fold: 2
-  base: 20
-    fold: 2
+    base: 2
+  fold: 20
+    base: 2
 sophistication
   site: 177
-    fold: 6
+    base: 6
   size: 879
-    fold: 6
-  base: 69
-    fold: 6
+    base: 6
+  fold: 69
+    base: 6
 ```
 
 ## Inspiration

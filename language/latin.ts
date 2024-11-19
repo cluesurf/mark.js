@@ -150,7 +150,7 @@ export const listKabbalahBase = buildFoldLister(listKabbalahSite)
 export const listKabbalahSize = buildSizeLister(listKabbalahSite)
 
 export const listAlphabetSite = buildSiteLister(alphabet)
-export const listAlphabetBase = buildFoldLister(listAlphabetSite)
+export const listAlphabetFold = buildFoldLister(listAlphabetSite)
 export const listAlphabetSize = buildSizeLister(listAlphabetSite)
 
 export const listHebrewSite = buildSiteLister(hebrew)
