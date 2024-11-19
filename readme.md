@@ -42,3 +42,8 @@ AdvAntsmEnt
   size 278
   link 31937476274
 ```
+
+## Inspiration
+
+- [The Key of It All-Book I: An Encyclopedic Guide to the Sacred Languages & Magical Systems of the World](https://www.amazon.com/Key-All-Book-Encyclopedic-Languages-Llewellyns/dp/0875423183)
+- [The Key of It All-Book II: An Encyclopedic Guide to the Sacred Languages & Magical Systems of the World](https://www.amazon.com/Key-All-Encyclopedic-Languages-Mysteries/dp/0875423795)

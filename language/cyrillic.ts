@@ -1,4 +1,10 @@
-const alphabet = {
+import {
+  buildFoldLister,
+  buildSiteLister,
+  buildSizeLister,
+} from '~/index.js'
+
+const alphabet: Record<string, number> = {
   а: 1,
   в: 2,
   г: 3,
@@ -40,14 +46,6 @@ const alphabet = {
   ѧ: 27,
 }
 
-const size = [
-  1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100,
-  200, 300, 400, 500, 600, 700, 800, 900,
-]
-
-const mapAlphabet = array =>
-  array.map(x => size[alphabet[x] - 1]).filter(x => x)
-const map9 = array =>
-  array.map(x => size[(alphabet[x] - 1) % 9]).filter(x => x)
-
-export { mapAlphabet, map9 }
+export const listAlphabetSite = buildSiteLister(alphabet)
+export const listAlphabetFold = buildFoldLister(listAlphabetSite)
+export const listAlphabetSize = buildSizeLister(listAlphabetSite)

@@ -1,3 +1,9 @@
+import {
+  buildFoldLister,
+  buildSiteLister,
+  buildSizeLister,
+} from '~/index.js'
+
 export const ILM_AL_HURUF_MAP = {
   ا: 1,
   ب: 2,
@@ -48,19 +54,9 @@ export const SIMPLIFICATION = {
   ک: 'ك',
 }
 
-const sizes = [
-  1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100,
-  200, 300, 400, 500, 600, 700, 800, 900, 1000,
-]
-
-export const mapIlmAlHuruf = (text: string) => {
-  return [...text].map(char => {
-    if (ILM_AL_HURUF_MAP[char]) {
-      return {
-        text: char,
-        mark: sizes[ILM_AL_HURUF_MAP[char] - 1]!,
-      }
-    } else {
-    }
-  })
-}
+export const listIlmAlHurufSite = buildSiteLister(
+  ILM_AL_HURUF_MAP,
+  SIMPLIFICATION,
+)
+export const listIlmAlHurufFold = buildFoldLister(listIlmAlHurufSite)
+export const listIlmAlHurufSize = buildSizeLister(listIlmAlHurufSite)

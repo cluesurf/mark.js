@@ -1,4 +1,6 @@
-export const misparHechrachi: { [key: string]: number } = {
+import { buildSiteLister } from '~/index.js'
+
+export const misparHechrachi: Record<string, number> = {
   א: 1,
   ב: 2,
   ג: 3,
@@ -28,12 +30,7 @@ export const misparHechrachi: { [key: string]: number } = {
   ץ: 18,
 }
 
-export const size: Array<number> = [
-  1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100,
-  200, 300, 400,
-]
-
-export const misparGadol: { [key: string]: number } = {
+export const misparGadol: Record<string, number> = {
   א: 1,
   ב: 2,
   ג: 3,
@@ -63,7 +60,7 @@ export const misparGadol: { [key: string]: number } = {
   ץ: 900,
 }
 
-export const misparSiduri: { [key: string]: number } = {
+export const misparSiduri: Record<string, number> = {
   א: 1,
   ב: 2,
   ג: 3,
@@ -93,7 +90,7 @@ export const misparSiduri: { [key: string]: number } = {
   ץ: 18,
 }
 
-export const misparKatan: { [key: string]: number } = {
+export const misparKatan: Record<string, number> = {
   א: 1,
   ב: 2,
   ג: 3,
@@ -123,15 +120,7 @@ export const misparKatan: { [key: string]: number } = {
   ץ: 9,
 }
 
-export const mapMisparHechrachi = (
-  array: Array<string>,
-): Array<number> =>
-  array
-    .map(x => size[(misparHechrachi[x] as number) - 1])
-    .filter(x => x) as Array<number>
-export const mapMisparGadol = (array: Array<string>): Array<number> =>
-  array.map(x => misparGadol[x]).filter(x => x) as Array<number>
-export const mapMisparSiduri = (array: Array<string>): Array<number> =>
-  array.map(x => misparSiduri[x]).filter(x => x) as Array<number>
-export const mapMisparKatan = (array: Array<string>): Array<number> =>
-  array.map(x => misparKatan[x]).filter(x => x) as Array<number>
+export const listMisparHechrachi = buildSiteLister(misparHechrachi)
+export const listMisparGadol = buildSiteLister(misparGadol)
+export const listMisparSiduri = buildSiteLister(misparSiduri)
+export const listMisparKatan = buildSiteLister(misparKatan)

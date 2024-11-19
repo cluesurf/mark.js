@@ -1,4 +1,6 @@
-const kabbalah: { [key: string]: number } = {
+import { buildFoldLister, buildSiteLister, buildSizeLister } from '..'
+
+export const kabbalah: Record<string, number> = {
   a: 1,
   l: 2,
   w: 3,
@@ -27,7 +29,7 @@ const kabbalah: { [key: string]: number } = {
   p: 26,
 }
 
-const alphabet: { [key: string]: number } = {
+export const alphabet: Record<string, number> = {
   a: 1,
   b: 2,
   c: 3,
@@ -56,7 +58,7 @@ const alphabet: { [key: string]: number } = {
   z: 26,
 }
 
-const hebrew: { [key: string]: number } = {
+export const hebrew: Record<string, number> = {
   a: 1,
   b: 2,
   c: 3,
@@ -85,12 +87,7 @@ const hebrew: { [key: string]: number } = {
   z: 23,
 }
 
-const size: Array<number> = [
-  1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100,
-  200, 300, 400, 500, 600, 700, 800, 900,
-]
-
-const chaldean: { [key: string]: number } = {
+export const chaldean: Record<string, number> = {
   a: 1,
   i: 1,
   j: 1,
@@ -119,7 +116,7 @@ const chaldean: { [key: string]: number } = {
   p: 8,
 }
 
-const pythagorean: { [key: string]: number } = {
+export const pythagorean: Record<string, number> = {
   a: 1,
   j: 1,
   s: 1,
@@ -148,28 +145,17 @@ const pythagorean: { [key: string]: number } = {
   r: 9,
 }
 
-const mapChaldean = (array: Array<string>): Array<number> =>
-  array.map(x => chaldean[x]).filter(x => x) as Array<number>
-const mapHebrew = (array: Array<string>): Array<number> =>
-  array
-    .map(x => size[(hebrew[x] as number) - 1])
-    .filter(x => x) as Array<number>
-const mapAlphabet = (array: Array<string>): Array<number> =>
-  array.map(x => alphabet[x]).filter(x => x) as Array<number>
-const map9 = (array: Array<string>): Array<number> =>
-  array
-    .map(x => size[((alphabet[x] as number) - 1) % 9])
-    .filter(x => x) as Array<number>
-const mapKabbalah = (array: Array<string>): Array<number> =>
-  array.map(x => kabbalah[x]).filter(x => x) as Array<number>
-const mapPythagorean = (array: Array<string>): Array<number> =>
-  array.map(x => pythagorean[x]).filter(x => x) as Array<number>
+export const listKabbalahSite = buildSiteLister(kabbalah)
+export const listKabbalahFold = buildFoldLister(listKabbalahSite)
+export const listKabbalahSize = buildSizeLister(listKabbalahSite)
 
-export {
-  map9,
-  mapAlphabet,
-  mapHebrew,
-  mapChaldean,
-  mapKabbalah,
-  mapPythagorean,
-}
+export const listAlphabetSite = buildSiteLister(alphabet)
+export const listAlphabetFold = buildFoldLister(listAlphabetSite)
+export const listAlphabetSize = buildSizeLister(listAlphabetSite)
+
+export const listHebrewSite = buildSiteLister(hebrew)
+export const listHebrewFold = buildFoldLister(listHebrewSite)
+export const listHebrewSize = buildSizeLister(listHebrewSite)
+
+export const listChaldean = buildSiteLister(chaldean)
+export const listPythagorean = buildSiteLister(pythagorean)

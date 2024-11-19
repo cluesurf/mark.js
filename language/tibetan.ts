@@ -1,4 +1,11 @@
-import { fold, sizes, Span } from '~/index.js'
+import {
+  buildFoldLister,
+  buildSiteLister,
+  buildSizeLister,
+  fold,
+  sizes,
+  Span,
+} from '~/index.js'
 
 // import * as tibetan from '@termsurf/text/language/tibetan'
 
@@ -44,48 +51,6 @@ export const consonants: Record<string, number> = {
 
 const mappings: Record<string, string> = {}
 
-export const listConsonantSite = (text: string) => {
-  const glyphs = [...text]
-  const spans: Array<Span> = []
-
-  for (const glyph of glyphs) {
-    let key = glyph
-    const mapping = mappings[key]
-    if (mapping) {
-      key = mapping
-    }
-    const mark = consonants[key]
-
-    if (mark) {
-      spans.push({
-        mark,
-        text: glyph,
-      })
-    } else {
-      const last = spans[spans.length - 1]
-      if (last && !last.mark) {
-        last.text += glyph
-      } else {
-        spans.push({
-          text: glyph,
-        })
-      }
-    }
-  }
-
-  return spans
-}
-
-export const listConsonantFold = (text: string) => {
-  return listConsonantSite(text).map(({ text, mark }) => ({
-    text,
-    mark: mark ? fold(mark) : undefined,
-  }))
-}
-
-export const listConsonantSize = (text: string) => {
-  return listConsonantSite(text).map(({ text, mark }) => ({
-    text,
-    mark: mark ? sizes[mark - 1]! : undefined,
-  }))
-}
+export const listConsonantSite = buildSiteLister(consonants, mappings)
+export const listConsonantFold = buildFoldLister(listConsonantSite)
+export const listConsonantSize = buildSizeLister(listConsonantSite)

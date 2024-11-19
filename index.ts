@@ -23,15 +23,75 @@ export const fold = (number: number): number => {
   }
 }
 
-export const mass = (lines: Array<Line>) => {
-  return sum(lines.map(line => line.mark))
+export const mass = (lines: Array<Span>) => {
+  return sum(
+    lines.map(line => line.mark).filter(mark => mark) as Array<
+      Required<number>
+    >,
+  )
 }
 
-export const link = (lines: Array<Line>) => {
-  return lines.map(line => line.mark).join('')
+export const link = (lines: Array<Span>) => {
+  return lines
+    .map(line => line.mark)
+    .filter(x => x)
+    .join('')
 }
 
 export const split = (number: number) =>
   String(number)
     .split('')
     .map(x => parseInt(x, 10))
+
+export const buildSiteLister =
+  (
+    base: Record<string, number>,
+    mappings: Record<string, string> = {},
+  ) =>
+  (text: string) => {
+    const glyphs = [...text]
+    const spans: Array<Span> = []
+
+    for (const glyph of glyphs) {
+      let key = glyph
+      const mapping = mappings[key]
+      if (mapping) {
+        key = mapping
+      }
+      const mark = base[key]
+
+      if (mark) {
+        spans.push({
+          mark,
+          text: glyph,
+        })
+      } else {
+        const last = spans[spans.length - 1]
+        if (last && !last.mark) {
+          last.text += glyph
+        } else {
+          spans.push({
+            text: glyph,
+          })
+        }
+      }
+    }
+
+    return spans
+  }
+
+export const buildFoldLister =
+  (listSite: (text: string) => Array<Span>) => (text: string) => {
+    return listSite(text).map(({ text, mark }) => ({
+      text,
+      mark: mark ? fold(mark) : undefined,
+    }))
+  }
+
+export const buildSizeLister =
+  (listSite: (text: string) => Array<Span>) => (text: string) => {
+    return listSite(text).map(({ text, mark }) => ({
+      text,
+      mark: mark ? sizes[mark - 1]! : undefined,
+    }))
+  }
