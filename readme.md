@@ -26,21 +26,27 @@ const cycle = cycle(integers)
 Logs from some of the tests:
 
 ```
-UwekInd
-  fold 9
-  site 63
-  size 675
-  link 5625171
-vIdiyo
-  fold 5
-  site 59
-  size 806
-  link 911174
-AdvAntsmEnt
-  fold 8
-  site 98
-  size 278
-  link 31937476274
+dog
+  site: 26
+    fold: 8
+  size: 71
+    fold: 8
+  base: 17
+    fold: 8
+gold
+  site: 38
+    fold: 2
+  size: 101
+    fold: 2
+  base: 20
+    fold: 2
+sophistication
+  site: 177
+    fold: 6
+  size: 879
+    fold: 6
+  base: 69
+    fold: 6
 ```
 
 ## Inspiration

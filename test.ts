@@ -6,7 +6,7 @@ import * as greek from './language/greek'
 import * as hebrew from './language/hebrew'
 import * as gothic from './language/gothic'
 import * as devanagari from './language/devanagari'
-import * as tone from './language/talk'
+import * as talk from './language/talk'
 
 // logLang('chinese', '9', [...'幸福'])
 // logLang('latin', '9', [...'hello world'])
@@ -17,14 +17,27 @@ import * as tone from './language/talk'
 // logLang('devanagari', '27', [...'कृष्ण'])
 // logLang('devanagari', '9', [...'कृष्ण'])
 
-logTone('UwekInd')
-logTone('vIdiyo')
-logTone('AdvAntsmEnt')
+logLatinAlphabet('dog')
+logLatinAlphabet('gold')
+logLatinAlphabet('sophistication')
+// logTalk('UwekInd')
+// logTalk('vIdiyo')
+// logTalk('AdvAntsmEnt')
 
-function logTone(text: string) {
+function logTalk(text: string) {
   console.log(text)
-  console.log('  fold', fold(mass(tone.listFold(text))))
-  console.log('  site', mass(tone.listSite(text)))
-  console.log('  size', mass(tone.listSize(text)))
-  console.log('  link', link(tone.listFold(text)))
+  console.log('  fold', fold(mass(talk.listFold(text))))
+  console.log('  site', mass(talk.listSite(text)))
+  console.log('  size', mass(talk.listSize(text)))
+  console.log('  link', link(talk.listFold(text)))
+}
+
+function logLatinAlphabet(text: string) {
+  console.log(text)
+  console.log('  site:', mass(latin.listAlphabetSite(text)))
+  console.log('    fold:', fold(mass(latin.listAlphabetSite(text))))
+  console.log('  size:', mass(latin.listAlphabetSize(text)))
+  console.log('    fold:', fold(mass(latin.listAlphabetSize(text))))
+  console.log('  base:', mass(latin.listAlphabetBase(text)))
+  console.log('    fold:', fold(mass(latin.listAlphabetBase(text))))
 }

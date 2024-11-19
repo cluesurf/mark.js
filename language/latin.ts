@@ -146,15 +146,15 @@ export const pythagorean: Record<string, number> = {
 }
 
 export const listKabbalahSite = buildSiteLister(kabbalah)
-export const listKabbalahFold = buildFoldLister(listKabbalahSite)
+export const listKabbalahBase = buildFoldLister(listKabbalahSite)
 export const listKabbalahSize = buildSizeLister(listKabbalahSite)
 
 export const listAlphabetSite = buildSiteLister(alphabet)
-export const listAlphabetFold = buildFoldLister(listAlphabetSite)
+export const listAlphabetBase = buildFoldLister(listAlphabetSite)
 export const listAlphabetSize = buildSizeLister(listAlphabetSite)
 
 export const listHebrewSite = buildSiteLister(hebrew)
-export const listHebrewFold = buildFoldLister(listHebrewSite)
+export const listHebrewBase = buildFoldLister(listHebrewSite)
 export const listHebrewSize = buildSizeLister(listHebrewSite)
 
 export const listChaldean = buildSiteLister(chaldean)
