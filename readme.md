@@ -1,6 +1,14 @@
 
 # Gematria in JavaScript
 
+For Node.js and the browser.
+
+```
+npm install @termsurf/mark
+```
+
+## Usage
+
 Pass in a string of characters to functions like these.
 
 ```js
