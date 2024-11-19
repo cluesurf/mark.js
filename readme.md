@@ -1,9 +1,7 @@
 
 # Gematria in JavaScript
 
-For Node.js, not the browser, as it requires a database basically to do across cultures.
-
-Pass in an array of characters, which you can get with the _spread_ operator.
+Pass in a string of characters to functions like these.
 
 ```js
 import greek from '@termsurf/mark.js/language/greek'
