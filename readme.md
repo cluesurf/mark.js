@@ -12,8 +12,8 @@ npm install @termsurf/mark
 Pass in a string of characters to functions like these.
 
 ```js
-import greek from '@termsurf/mark.js/language/greek'
-import { mass, base } from '@termsurf/mark.js'
+import greek from '@termsurf/mark/language/greek'
+import { mass, base } from '@termsurf/mark'
 
 // 666 https://en.wikipedia.org/wiki/Number_of_the_beast
 logGreekAlphabet('χξϛ')
