@@ -11,6 +11,9 @@ importers:
       '@termsurf/talk':
         specifier: ^3.2.2
         version: 3.2.2
+      '@termsurf/text':
+        specifier: ^0.3.62
+        version: 0.3.62
       tsc-alias:
         specifier: ^1.8.8
         version: 1.8.8
@@ -530,6 +533,9 @@ packages:
 
   '@termsurf/talk@3.2.2':
     resolution: {integrity: sha512-g30r/0jCaNJjVq8wcorHbUPybW8FWRu4R7973W/Hl5jOy96msea4EmWFmDjAE4N6hCcSfXp9wYOnQPFjZplbMQ==}
+
+  '@termsurf/text@0.3.62':
+    resolution: {integrity: sha512-VebfxMj98X0l8HeVlYtwExf0YNuJnpR+DjxK3MQeFIu8PnZz/Lnjxzi+3hIxfzmAzY+V3a1Aw3gC87RWfwHu9g==}
 
   '@types/eslint-scope@3.7.7':
     resolution: {integrity: sha512-MzMFlSLBqNF2gcHWO0G1vP/YQyfvrxZ0bF+u7mzUdZ1/xK4A4sru+nraZz5i3iEIk1l1uyicaDVTB4QbbEkAYg==}
@@ -2016,6 +2022,9 @@ packages:
   text-table@0.2.0:
     resolution: {integrity: sha512-N+8UisAXDGk8PFXP4HAzVR9nbfmVJ3zYLAWiTIoqC5v5isinhr+r5uaO8+7r3BMfuNIufIsA7RdpVgacC2cSpw==}
 
+  tibetan-ewts-converter@1.0.1:
+    resolution: {integrity: sha512-8DTBZTEmt+zkczWwiok7VpD4I7Xindtjven81zeB88GLmv75YimRoSOjzPXVILTHGZ90P4nSpkxr2uDxtw7B0A==}
+
   to-regex-range@5.0.1:
     resolution: {integrity: sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==}
     engines: {node: '>=8.0'}
@@ -2500,6 +2509,10 @@ snapshots:
     dependencies:
       '@lancejpollard/script-tree': 1.1.2
       lodash: 4.17.21
+
+  '@termsurf/text@0.3.62':
+    dependencies:
+      tibetan-ewts-converter: 1.0.1
 
   '@types/eslint-scope@3.7.7':
     dependencies:
@@ -4262,6 +4275,8 @@ snapshots:
       source-map-support: 0.5.21
 
   text-table@0.2.0: {}
+
+  tibetan-ewts-converter@1.0.1: {}
 
   to-regex-range@5.0.1:
     dependencies:

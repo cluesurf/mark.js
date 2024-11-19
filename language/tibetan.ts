@@ -1,10 +1,13 @@
-export const ALPHABET_MAP: { [key: string]: number } = {
+import { fold, sizes, Span } from '~/index.js'
+
+// import * as tibetan from '@termsurf/text/language/tibetan'
+
+export const consonants: Record<string, number> = {
   ཀ: 1,
   ཫ: 1,
   ཁ: 2,
   ག: 3,
   ང: 4,
-  ག༹: 4,
   ཅ: 5,
   ཆ: 6,
   ཇ: 7,
@@ -39,17 +42,50 @@ export const ALPHABET_MAP: { [key: string]: number } = {
   ཨ: 30,
 }
 
-const size: Array<number> = [
-  1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100,
-  200, 300, 400, 500, 600, 700, 800, 900, 1000,
-]
+const mappings: Record<string, string> = {}
 
-export const sizeMass = (list: Array<string>) => {}
-export const sizeLink = (list: Array<string>) => {}
-export const siteMass = (list: Array<string>) => {}
-export const siteLink = (list: Array<string>) => {}
+export const listConsonantSite = (text: string) => {
+  const glyphs = [...text]
+  const spans: Array<Span> = []
 
-export const mapLetters = (array: Array<string>): Array<number> =>
-  array
-    .map(x => size[(ALPHABET_MAP[x] as number) - 1])
-    .filter(x => x) as Array<number>
+  for (const glyph of glyphs) {
+    let key = glyph
+    const mapping = mappings[key]
+    if (mapping) {
+      key = mapping
+    }
+    const mark = consonants[key]
+
+    if (mark) {
+      spans.push({
+        mark,
+        text: glyph,
+      })
+    } else {
+      const last = spans[spans.length - 1]
+      if (last && !last.mark) {
+        last.text += glyph
+      } else {
+        spans.push({
+          text: glyph,
+        })
+      }
+    }
+  }
+
+  return spans
+}
+
+export const listConsonantFold = (text: string) => {
+  return listConsonantSite(text).map(({ text, mark }) => ({
+    text,
+    mark: mark ? fold(mark) : undefined,
+  }))
+}
+
+export const listConsonantSize = (text: string) => {
+  return listConsonantSite(text).map(({ text, mark }) => ({
+    text,
+    mark: mark ? sizes[mark - 1]! : undefined,
+  }))
+}
