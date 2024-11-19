@@ -6,7 +6,7 @@ import * as greek from './language/greek'
 import * as hebrew from './language/hebrew'
 import * as gothic from './language/gothic'
 import * as devanagari from './language/devanagari'
-import * as tone from './language/tune'
+import * as tone from './language/talk'
 
 // logLang('chinese', '9', [...'幸福'])
 // logLang('latin', '9', [...'hello world'])
