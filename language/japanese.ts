@@ -1,4 +1,10 @@
-const hiragana: { [key: string]: number } = {
+import {
+  buildBaseLister,
+  buildSiteLister,
+  buildSizeLister,
+} from '~/index.js'
+
+const hiragana: Record<string, number> = {
   あ: 1,
   い: 2,
   う: 3,
@@ -46,10 +52,10 @@ const hiragana: { [key: string]: number } = {
   ゐ: 47,
   ゑ: 49,
   を: 50,
-  ん: 33,
+  ん: 51,
 }
 
-const katakana: { [key: string]: number } = {
+const katakana: Record<string, number> = {
   ア: 1,
   イ: 2,
   ウ: 3,
@@ -97,29 +103,13 @@ const katakana: { [key: string]: number } = {
   ヰ: 47,
   ヱ: 49,
   ヲ: 50,
-  ン: 33,
+  ン: 51,
 }
 
-const size: Array<number> = [
-  1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100,
-  200, 300, 400, 500, 600, 700, 800, 900,
-]
+export const listHiraganaSite = buildSiteLister(hiragana)
+export const listHiraganaBase = buildBaseLister(listHiraganaSite)
+export const listHiraganaSize = buildSizeLister(listHiraganaSite)
 
-const mapHiragana27 = (array: Array<string>): Array<number> =>
-  array
-    .map(x => size[((hiragana[x] as number) - 1) % 27])
-    .filter(x => x) as Array<number>
-const mapKatakana27 = (array: Array<string>): Array<number> =>
-  array
-    .map(x => size[((katakana[x] as number) - 1) % 27])
-    .filter(x => x) as Array<number>
-const mapHiragana9 = (array: Array<string>): Array<number> =>
-  array
-    .map(x => size[((hiragana[x] as number) - 1) % 9])
-    .filter(x => x) as Array<number>
-const mapKatakana9 = (array: Array<string>): Array<number> =>
-  array
-    .map(x => size[((katakana[x] as number) - 1) % 9])
-    .filter(x => x) as Array<number>
-
-export { mapHiragana27, mapKatakana27, mapHiragana9, mapKatakana9 }
+export const listKatakanaSite = buildSiteLister(katakana)
+export const listKatakanaBase = buildBaseLister(listKatakanaSite)
+export const listKatakanaSize = buildSizeLister(listKatakanaSite)

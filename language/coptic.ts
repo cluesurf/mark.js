@@ -1,5 +1,5 @@
 import {
-  buildFoldLister,
+  buildBaseLister,
   buildSiteLister,
   buildSizeLister,
 } from '~/index.js'
@@ -41,5 +41,5 @@ export const alphabet = {
 }
 
 export const listAlphabetSite = buildSiteLister(alphabet)
-export const listAlphabetFold = buildFoldLister(listAlphabetSite)
+export const listAlphabetFold = buildBaseLister(listAlphabetSite)
 export const listAlphabetSize = buildSizeLister(listAlphabetSite)

@@ -1,4 +1,4 @@
-import { buildFoldLister, buildSiteLister, buildSizeLister } from '..'
+import { buildBaseLister, buildSiteLister, buildSizeLister } from '..'
 
 export const kabbalah: Record<string, number> = {
   a: 1,
@@ -146,15 +146,15 @@ export const pythagorean: Record<string, number> = {
 }
 
 export const listKabbalahSite = buildSiteLister(kabbalah)
-export const listKabbalahBase = buildFoldLister(listKabbalahSite)
+export const listKabbalahBase = buildBaseLister(listKabbalahSite)
 export const listKabbalahSize = buildSizeLister(listKabbalahSite)
 
 export const listAlphabetSite = buildSiteLister(alphabet)
-export const listAlphabetFold = buildFoldLister(listAlphabetSite)
+export const listAlphabetBase = buildBaseLister(listAlphabetSite)
 export const listAlphabetSize = buildSizeLister(listAlphabetSite)
 
 export const listHebrewSite = buildSiteLister(hebrew)
-export const listHebrewBase = buildFoldLister(listHebrewSite)
+export const listHebrewBase = buildBaseLister(listHebrewSite)
 export const listHebrewSize = buildSizeLister(listHebrewSite)
 
 export const listChaldean = buildSiteLister(chaldean)

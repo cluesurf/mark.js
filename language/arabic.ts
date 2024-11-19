@@ -1,5 +1,5 @@
 import {
-  buildFoldLister,
+  buildBaseLister,
   buildSiteLister,
   buildSizeLister,
 } from '~/index.js'
@@ -58,5 +58,5 @@ export const listIlmAlHurufSite = buildSiteLister(
   ILM_AL_HURUF_MAP,
   SIMPLIFICATION,
 )
-export const listIlmAlHurufFold = buildFoldLister(listIlmAlHurufSite)
+export const listIlmAlHurufBase = buildBaseLister(listIlmAlHurufSite)
 export const listIlmAlHurufSize = buildSizeLister(listIlmAlHurufSite)

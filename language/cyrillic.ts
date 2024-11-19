@@ -1,5 +1,5 @@
 import {
-  buildFoldLister,
+  buildBaseLister,
   buildSiteLister,
   buildSizeLister,
 } from '~/index.js'
@@ -47,5 +47,5 @@ const alphabet: Record<string, number> = {
 }
 
 export const listAlphabetSite = buildSiteLister(alphabet)
-export const listAlphabetFold = buildFoldLister(listAlphabetSite)
+export const listAlphabetBase = buildBaseLister(listAlphabetSite)
 export const listAlphabetSize = buildSizeLister(listAlphabetSite)

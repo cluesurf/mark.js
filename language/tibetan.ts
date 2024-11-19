@@ -1,10 +1,7 @@
 import {
-  buildFoldLister,
+  buildBaseLister,
   buildSiteLister,
   buildSizeLister,
-  fold,
-  sizes,
-  Span,
 } from '~/index.js'
 
 // import * as tibetan from '@termsurf/text/language/tibetan'
@@ -52,5 +49,5 @@ export const consonants: Record<string, number> = {
 const mappings: Record<string, string> = {}
 
 export const listConsonantSite = buildSiteLister(consonants, mappings)
-export const listConsonantFold = buildFoldLister(listConsonantSite)
+export const listConsonantBase = buildBaseLister(listConsonantSite)
 export const listConsonantSize = buildSizeLister(listConsonantSite)
