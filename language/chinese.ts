@@ -11,6 +11,6 @@ for (const char in lineCounts) {
   characters[char] = ((lineCounts[char] - 1) % 32) + 1
 }
 
-export const listConsonantSite = buildSiteLister(characters)
-export const listConsonantBase = buildBaseLister(listConsonantSite)
-export const listConsonantSize = buildSizeLister(listConsonantSite)
+export const listSite = buildSiteLister(characters)
+export const listFold = buildBaseLister(listSite)
+export const listSize = buildSizeLister(listSite)

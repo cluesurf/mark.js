@@ -37,5 +37,5 @@ const alphabet: Record<string, number> = {
 }
 
 export const listAlphabetSite = buildSiteLister(alphabet)
-export const listAlphabetBase = buildBaseLister(listAlphabetSite)
+export const listAlphabetFold = buildBaseLister(listAlphabetSite)
 export const listAlphabetSize = buildSizeLister(listAlphabetSite)

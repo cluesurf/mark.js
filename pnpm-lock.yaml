@@ -12,8 +12,8 @@ importers:
         specifier: ^3.2.2
         version: 3.2.2
       '@termsurf/text':
-        specifier: ^0.3.62
-        version: 0.3.62
+        specifier: ^0.3.64
+        version: 0.3.64
       tsc-alias:
         specifier: ^1.8.8
         version: 1.8.8
@@ -534,8 +534,8 @@ packages:
   '@termsurf/talk@3.2.2':
     resolution: {integrity: sha512-g30r/0jCaNJjVq8wcorHbUPybW8FWRu4R7973W/Hl5jOy96msea4EmWFmDjAE4N6hCcSfXp9wYOnQPFjZplbMQ==}
 
-  '@termsurf/text@0.3.62':
-    resolution: {integrity: sha512-VebfxMj98X0l8HeVlYtwExf0YNuJnpR+DjxK3MQeFIu8PnZz/Lnjxzi+3hIxfzmAzY+V3a1Aw3gC87RWfwHu9g==}
+  '@termsurf/text@0.3.64':
+    resolution: {integrity: sha512-Tb5WEJsqDNAFg1/0CP41UDPWTRfUplqHy7h2cDFU41nkgmuKfOs9s/8eXZ5UuFnnMkFsDbJNVf0Y03qpoj3cPQ==}
 
   '@types/eslint-scope@3.7.7':
     resolution: {integrity: sha512-MzMFlSLBqNF2gcHWO0G1vP/YQyfvrxZ0bF+u7mzUdZ1/xK4A4sru+nraZz5i3iEIk1l1uyicaDVTB4QbbEkAYg==}
@@ -2510,7 +2510,7 @@ snapshots:
       '@lancejpollard/script-tree': 1.1.2
       lodash: 4.17.21
 
-  '@termsurf/text@0.3.62':
+  '@termsurf/text@0.3.64':
     dependencies:
       tibetan-ewts-converter: 1.0.1
 

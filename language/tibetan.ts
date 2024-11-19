@@ -4,7 +4,7 @@ import {
   buildSizeLister,
 } from '~/index.js'
 
-// import * as tibetan from '@termsurf/text/language/tibetan'
+import { subjoinedConsonantsToBaseConsonants } from '@termsurf/text/tibetan'
 
 export const consonants: Record<string, number> = {
   ཀ: 1,
@@ -46,8 +46,9 @@ export const consonants: Record<string, number> = {
   ཨ: 30,
 }
 
-const mappings: Record<string, string> = {}
-
-export const listConsonantSite = buildSiteLister(consonants, mappings)
-export const listConsonantBase = buildBaseLister(listConsonantSite)
-export const listConsonantSize = buildSizeLister(listConsonantSite)
+export const listConsonantsSite = buildSiteLister(
+  consonants,
+  subjoinedConsonantsToBaseConsonants,
+)
+export const listConsonantsFold = buildBaseLister(listConsonantsSite)
+export const listConsonantsSize = buildSizeLister(listConsonantsSite)

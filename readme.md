@@ -6,47 +6,84 @@ For Node.js, not the browser, as it requires a database basically to do across c
 Pass in an array of characters, which you can get with the _spread_ operator.
 
 ```js
-import chinese from '@termsurf/mark.js/language/chinese'
 import greek from '@termsurf/mark.js/language/greek'
-import { sum, peak, cycle } from '@termsurf/mark.js'
+import { mass, base } from '@termsurf/mark.js'
 
-console.log(sum(greek.mapAlphabet([...'χξϛ'])))
 // 666 https://en.wikipedia.org/wiki/Number_of_the_beast
+logGreekAlphabet('χξϛ')
+// χξϛ
+//   base 9
+//   fold 18
+//   site 45
+//   size 666
 
-const chars = [...'幸福']
-const integers = chinese.map9(chars)
-// add all the integers together
-const sum = sum(integers)
-// add numbers of sum together continuously until it is 1 digit.
-const peak = peak(integers)
-// rotate around sum like clock, between 1 and 9.
-const cycle = cycle(integers)
+function logGreekAlphabet(text: string) {
+  console.log(text)
+  console.log('  base', base(mass(greek.listAlphabetSite(text))))
+  console.log('  fold', mass(greek.listAlphabetFold(text)))
+  console.log('  site', mass(greek.listAlphabetSite(text)))
+  console.log('  size', mass(greek.listAlphabetSize(text)))
+}
 ```
 
 Logs from some of the tests:
 
 ```
-dog
-  site: 26
-    base: 8
-  size: 71
-    base: 8
-  fold: 17
-    base: 8
 gold
-  site: 38
-    base: 2
-  size: 101
-    base: 2
-  fold: 20
-    base: 2
+  base 2
+  fold 20
+  site 38
+  size 101
+pattern
+  base 4
+  fold 31
+  site 94
+  size 616
 sophistication
-  site: 177
-    base: 6
-  size: 879
-    base: 6
-  fold: 69
-    base: 6
+  base 6
+  fold 69
+  site 177
+  size 879
+UwekInd
+  base 9
+  fold 27
+  site 63
+  size 675
+vIdiyo
+  base 5
+  fold 23
+  site 59
+  size 806
+AdvAntsmEnt
+  base 8
+  fold 53
+  site 98
+  size 278
+བསྒྲུབས
+  base 5
+  fold 14
+  site 122
+  size 2903
+རིག་པ་
+  base 9
+  fold 18
+  site 45
+  size 783
+χξϛ
+  base 9
+  fold 18
+  site 45
+  size 666
+幸福
+  base 3
+  fold 12
+  site 21
+  size 48
+𐌼𐌰𐌽𐌰𐍃𐌴𐌸𐍃
+  base 2
+  fold 29
+  site 83
+  size 506
 ```
 
 ## Inspiration

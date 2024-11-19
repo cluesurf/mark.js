@@ -1,5 +1,5 @@
 import { chunk, serialize } from '@termsurf/talk/make/talk/prosody'
-import { fold, sizes } from '..'
+import { base, sizes } from '..'
 
 export const positions: Record<string, number> = {
   i: 1,
@@ -78,7 +78,7 @@ export const listSite = (text: string) => {
 export const listFold = (text: string) => {
   return listSite(text).map(({ text, mark }) => ({
     text,
-    mark: fold(mark),
+    mark: base(mark),
   }))
 }
 
