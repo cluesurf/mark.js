@@ -1,5 +1,5 @@
 {
-  "name": "@termsurf/mark",
+  "name": "@cluesurf/mark",
   "version": "0.5.0",
   "scripts": {
     "make": "tsc && tsc-alias",
@@ -37,8 +37,8 @@
     "tsx": "^4.7.0"
   },
   "dependencies": {
-    "@termsurf/talk": "^3.2.2",
-    "@termsurf/text": "^0.3.64",
+    "@cluesurf/talk": "^3.2.2",
+    "@cluesurf/text": "^0.3.64",
     "tsc-alias": "^1.8.8"
   }
 }

@@ -1,10 +1,31 @@
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 
-# Gematria in JavaScript
+<h3 align='center'>@cluesurf/mark</h3>
+<p align='center'>
+  Gematria in JavaScript
+</p>
+
+<br/>
+<br/>
+<br/>
+
+## Introduction
+
+Gematria is assigning numerical values to text, so that you can follow associations between words that have a relation in the numerical association system being used. It acts as a signal to cue your mind into finding meaning in the relationship between two current words.
+
+Whether or not that meaning/relationship is _true_, or whether or not it is _meaningful_, is a subject of debate. It can be seen as meaningful under certain logical constraints to the system, or it can be seen as completely arbitrary and meaningless, as you just picked two random words that were connected by a meaningless signal. You could have chosen any system for representing letters as numbers, so they are not necessarily meaningful numbers given the seemingly random system you chose.
+
+## Installation
 
 For Node.js and the browser.
 
 ```
-npm install @termsurf/mark
+npm install @cluesurf/mark
 ```
 
 ## Usage
@@ -12,8 +33,8 @@ npm install @termsurf/mark
 Pass in a string of characters to functions like these.
 
 ```js
-import greek from '@termsurf/mark/language/greek'
-import { mass, base } from '@termsurf/mark'
+import greek from '@cluesurf/mark/language/greek'
+import { mass, base } from '@cluesurf/mark'
 
 // 666 https://en.wikipedia.org/wiki/Number_of_the_beast
 logGreekAlphabet('χξϛ')
