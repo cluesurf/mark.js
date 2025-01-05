@@ -1,4 +1,4 @@
-import { chunk, serialize } from '@termsurf/talk/make/talk/prosody'
+import { chunk, serialize } from '@cluesurf/talk/make/talk/prosody'
 import { base, sizes } from '..'
 
 export const positions: Record<string, number> = {

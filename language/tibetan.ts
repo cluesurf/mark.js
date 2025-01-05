@@ -4,7 +4,7 @@ import {
   buildSizeLister,
 } from '~/index.js'
 
-import { subjoinedConsonantsToBaseConsonants } from '@termsurf/text/tibetan'
+import { subjoinedConsonantsToBaseConsonants } from '@cluesurf/text/tibetan'
 
 export const consonants: Record<string, number> = {
   ཀ: 1,

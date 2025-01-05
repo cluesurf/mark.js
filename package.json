@@ -1,6 +1,6 @@
 {
   "name": "@cluesurf/mark",
-  "version": "0.5.0",
+  "version": "0.5.2",
   "scripts": {
     "make": "tsc && tsc-alias",
     "move": "pnpm make && git add . && git commit -am 'save' && npm version patch && pnpm host && git push",
@@ -37,8 +37,8 @@
     "tsx": "^4.7.0"
   },
   "dependencies": {
-    "@cluesurf/talk": "^3.2.2",
-    "@cluesurf/text": "^0.3.64",
+    "@cluesurf/talk": "^1.4.4",
+    "@cluesurf/text": "^0.3.0",
     "tsc-alias": "^1.8.8"
   }
 }
