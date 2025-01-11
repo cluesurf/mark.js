@@ -4,7 +4,7 @@ import {
   buildSizeLister,
 } from '~/index.js'
 
-export const consonants1: Record<string, number> = {
+export const consonants22: Record<string, number> = {
   א: 1,
   ב: 2,
   ג: 3,
@@ -34,7 +34,7 @@ export const consonants1: Record<string, number> = {
   ץ: 18,
 }
 
-export const consonants2: Record<string, number> = {
+export const consonants27: Record<string, number> = {
   א: 1,
   ב: 2,
   ג: 3,
@@ -64,10 +64,18 @@ export const consonants2: Record<string, number> = {
   ץ: 27,
 }
 
-export const listConsonants1Site = buildSiteLister(consonants1)
-export const listConsonants1Base = buildBaseLister(listConsonants1Site)
-export const listConsonants1Size = buildSizeLister(listConsonants1Site)
+export const listConsonants22Site = buildSiteLister(consonants22)
+export const listConsonants22Fold = buildBaseLister(
+  listConsonants22Site,
+)
+export const listConsonants22Size = buildSizeLister(
+  listConsonants22Site,
+)
 
-export const listConsonants2Site = buildSiteLister(consonants2)
-export const listConsonants2Base = buildBaseLister(listConsonants2Site)
-export const listConsonants2Size = buildSizeLister(listConsonants2Site)
+export const listConsonants27Site = buildSiteLister(consonants27)
+export const listConsonants27Fold = buildBaseLister(
+  listConsonants27Site,
+)
+export const listConsonants27Size = buildSizeLister(
+  listConsonants27Site,
+)

@@ -58,5 +58,5 @@ export const listIlmAlHurufSite = buildSiteLister(
   ILM_AL_HURUF_MAP,
   SIMPLIFICATION,
 )
-export const listIlmAlHurufBase = buildBaseLister(listIlmAlHurufSite)
+export const listIlmAlHurufFold = buildBaseLister(listIlmAlHurufSite)
 export const listIlmAlHurufSize = buildSizeLister(listIlmAlHurufSite)
