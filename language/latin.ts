@@ -157,5 +157,10 @@ export const listHebrewSite = buildSiteLister(hebrew)
 export const listHebrewFold = buildBaseLister(listHebrewSite)
 export const listHebrewSize = buildSizeLister(listHebrewSite)
 
-export const listChaldean = buildSiteLister(chaldean)
-export const listPythagorean = buildSiteLister(pythagorean)
+export const listChaldeanSite = buildSiteLister(chaldean)
+export const listChaldeanFold = buildBaseLister(listChaldeanSite)
+export const listChaldeanSize = buildSizeLister(listChaldeanSite)
+
+export const listPythagoreanSite = buildSiteLister(chaldean)
+export const listPythagoreanFold = buildBaseLister(listPythagoreanSite)
+export const listPythagoreanSize = buildSizeLister(listPythagoreanSite)
